@@ -1,5 +1,9 @@
 # run: make all RUBY_BUILD_ENV=openipc/radxa/[empty](pi)
 
+CC := /usr/bin/arm-linux-gnueabihf-gcc
+CFLAGS := -Wall -Wno-stringop-truncation -Wno-format-truncation -O2 -fdata-sections -ffunction-sections
+LDFLAGS := -lrt -lpcap -lpthread -Wl,--gc-sections
+
 _CFLAGS := $(CFLAGS) -Wall -Wno-stringop-truncation -Wno-format-truncation -O2 -fdata-sections -ffunction-sections
 _CPPFLAGS := $(CPPLAGS) -Wall -Wno-stringop-truncation -Wno-format-truncation -O2 -fdata-sections -ffunction-sections
 
